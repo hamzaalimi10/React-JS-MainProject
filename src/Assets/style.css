@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+:root {
+    --mainColor: #ffedd0;
+    --secondaryColor: #b12d27;
+    --thirdColor: #f48a34;
+}
+
+#navbar{
+    background-color: var(--mainColor);
+}
+
+h1#title{
+    font-size: 65px;
+}
+
+#title{
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondaryColor);
+}
+
+#background{
+    background-color: rgb(219, 227, 235);
+}
+
+#Btn, #AddToCart{
+    text-decoration: none;
+    border: 1px solid var(--secondaryColor);
+    border-radius: 30px;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    background-color: var(--secondaryColor);
+    width: 25%;
+}
+
+#AddToCart{
+    border-radius: 0;
+}
+
+#Btn:hover{
+    background-color: #b1514c;
+    border-color: #b1514c;
+    transition: .5s;
+}
+
+#AddToCart:hover{
+    background-color: #b65c57;
+    border-color: #b65c57;
+    transition: .5s;
+}
+
+#women{
+    border-bottom: 2px solid black;
+    padding: 15px;
+}
+
+#brandName{
+    color: var(--thirdColor);
+}
+
+#footer{
+    background-color: var(--mainColor);
+}
+
+#footerText{
+    color: var(--secondaryColor);
+}
