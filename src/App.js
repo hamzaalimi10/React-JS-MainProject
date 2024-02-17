@@ -7,6 +7,7 @@ import Product from "./path/Product";
 import Cart from "./path/Cart";
 import Register from "./path/auth/Register";
 import Login from "./path/auth/Login";
+import Dashboard from './path/Dashboard'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </BrowserRouter>      

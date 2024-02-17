@@ -15,7 +15,7 @@ function Products({ products }) {
                   <br />
                   <span className="badge text-bg-success">${products.new_price}</span>
                 </Card.Text>
-                <Button variant="outline-primary" href={`/product/${products.id}`} >Order</Button>
+                <Button variant="outline-success" href={`/product/${products.id}`} >Order</Button>
             </Card.Body>
         </Card>
     </div>

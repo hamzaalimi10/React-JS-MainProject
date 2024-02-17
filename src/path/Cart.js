@@ -4,6 +4,7 @@ import remove from '../Assets/icons/cart_cross_icon.png'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
     const [cart, setCart] = useLocalStorage("cart", [])
@@ -11,6 +12,7 @@ function Cart() {
     const [show, setShow] = useState(false);
     const [data, setData] = useState({})
     const [isLoggedIn, setIsLoggedIn] = useLocalStorage('isloggedin', null)
+    const navigate = useNavigate()
 
     const handleRemove = e => {
         e.preventDefault()
@@ -20,11 +22,12 @@ function Cart() {
 
     const handleSubmit = e => {
         if(isLoggedIn != null){
-            const order = {...data, products: cart}
+            const order = {...data, products: cart, user: isLoggedIn.id}
             setOrders([...orders, order])
             setCart([])
             setShow(false)
             alert('Order is completed successfully')
+            navigate('/dashboard')
         }else{
             alert('YOU DONT HAVE AN ACCOUNT!')
         }
@@ -35,6 +38,7 @@ function Cart() {
     const handleShow = () => {
         if(isLoggedIn == null) {
           alert('Please login first!')
+          navigate('/login')
         } else {
           setShow(true);
         }
@@ -72,7 +76,7 @@ function Cart() {
                     </tbody>
                 </table>
 
-                <div className='container my-5' style={{width: '50%', border: "1px solid silver", borderRadius: '30px', padding: '50px'}}>
+                <div className='container my-5' style={{width: '50%', border: "1px solid silver", borderRadius: '30px', padding: '50px', color:'white'}}>
                     <h1 className='mb-5'>Cart Total</h1>
                     <div className='d-flex justify-content-between align-items-center' style={{borderBottom: "1px solid grey", height: '50px'}}>
                         <span>Subtotal</span>
@@ -112,7 +116,7 @@ function Cart() {
                     </Modal.Footer>
                 </Modal>
             </>
-            : 'Cart list is empty'
+            : <p style={{color:'white'}}>Cart list is empty</p>
         }
     </div>
   )

@@ -14,8 +14,8 @@ function Product() {
   const [cart, setCart] = useLocalStorage("cart", [])
 
   useEffect(() => {
-    const array = all_products.filter(n => n.id == id)
-    setProduct(...array)
+    const selectedProduct = all_products.filter(product => product.id == id)
+    setProduct(...selectedProduct)
   }, [])
 
   const handleChange = e => {
@@ -24,32 +24,29 @@ function Product() {
 
   const handleCart = e => {
     if(qty > 0){
-      const items = cart.filter(n => n.id == product.id)
+      const item = cart.filter(n => n.id == product.id)
 
-      if(items.length > 0){
-        items[0].qty += parseInt(qty)
-        setCart([...cart.filter(n => n.id != product.id), ...items])
+      if(item.length > 0){
+        item[0].qty += parseInt(qty)
+        setCart([...cart.filter(n => n.id != product.id), ...item])
       } else {
         setCart([{...product, qty: parseInt(qty)}, ...cart])
       }
   
-      alert('product was added successfully')
+      alert('Product Was Added Successfully')
       setQty(0)
     }
   }
 
   return (
     <div className='container my-5 d-flex justify-content-center'>
-      {/* {
-        (product && product.length > 0)
-        ? <> */}
         <div className='image w-50 d-flex justify-content-center'>
           <img src={product.image} />
         </div>
         <div className='info d-flex flex-column justify-content-center'>
-          <h3>{product.name}</h3>
+          <h3 style={{color:'white'}}>{product.name}</h3>
 
-          <div className='reviews my-3'>
+          <div className='reviews my-3' style={{color:'white'}}>
             <img src={star} />
             <img src={star} />
             <img src={star} />
@@ -64,15 +61,12 @@ function Product() {
           </div>
 
           <div className='qty d-flex flex-row align-items-center my-3'>
-            <span className='me-3'>Select quantity:</span>
+            <span className='me-3' style={{color:'white'}}>Select quantity:</span>
             <input type='number' value={qty} max={122} min={0} onChange={handleChange} />
           </div>
 
           <Button id='AddToCart' className='my-3' onClick={handleCart}>Add to Cart</Button>
         </div>
-        {/* </>
-        : '404'
-      } */}
     </div>
   )
 }

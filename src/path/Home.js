@@ -14,13 +14,13 @@ function Home() {
     {/* COLLECTIONS */}
       <div className='collections' id='background'>
         <div className='container'>
-          <div className='d-flex'>
-            <div className='text d-flex flex-column justify-content-center w-75'>
-              <h4 id='title'>NEW ARRIVALS</h4>
-              <h1 id='title'>new <br /> collections <br /> for everyone</h1>
-            </div>
-            <div className='img '>
+          <div className='d-flex justify-content-between'>
+            <div className='img'>
               <img src={firstimage} alt='image1' width='500'/>
+            </div>
+            <div className='d-flex flex-column justify-content-center'>
+              <h2 className='text-end' id='title'>HaEl New arrivals</h2>
+              <h1 className='text-end' id='title'>your favourite <br /> collections <br /> ARE HERE !</h1>
             </div>
           </div>
         </div>
@@ -46,8 +46,8 @@ function Home() {
           <div className='d-flex'>
             <div className='text d-flex flex-column justify-content-center w-75'>
               <h1 id='title'>EXCLUSIVE <br /> Offers For You</h1>
-              <h4 id='title'>Only on <span id='brandName'>SimpleSelect Shop</span></h4>
-              <Button id='Btn' href='/shop'>Exclusive Offers <i className="bi bi-arrow-right"></i></Button>
+              <h4 id='title'>Only on <span id='brandName'>HaEl Shop</span></h4>
+              <Button id='Btn' href='/shop' className='mt-4'>Shop <i className="bi bi-arrow-right"></i></Button>
             </div>
             <div className='img'>
               <img src={secondimage} alt='image2' />
@@ -59,7 +59,7 @@ function Home() {
     {/* POPULAR PRODUCTS */}
 
       <div className='container'>
-        <h1 id='women' className='text-center my-5'>POPULAR PRODUCTS</h1>
+        <h1 id='popular' className='text-center my-5'>POPULAR PRODUCTS</h1>
         <div className='row'>
           {
             (data_product) 

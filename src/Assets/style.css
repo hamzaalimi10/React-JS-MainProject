@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 :root {
-    --mainColor: #ffedd0;
-    --secondaryColor: #b12d27;
-    --thirdColor: #f48a34;
+    --firstColor: #000000;
+    --secondaryColor: #ffffff;
+    --thirdColor: rgb(51, 48, 48);
 }
 
 #navbar{
-    background-color: var(--mainColor);
+    background-color: var(--thirdColor);
 }
 
 h1#title{
     font-size: 65px;
+    color: var(--secondaryColor);
 }
-
 #title{
     font-family: 'Poppins', sans-serif;
     color: var(--secondaryColor);
 }
 
 #background{
-    background-color: rgb(219, 227, 235);
+    background-color: rgb(5, 124, 5);
 }
 
 #Btn, #AddToCart{
@@ -28,38 +28,61 @@ h1#title{
     border-radius: 30px;
     padding: 10px 0;
     text-align: center;
-    color: white;
+    color: black;
     background-color: var(--secondaryColor);
     width: 25%;
 }
-
 #AddToCart{
     border-radius: 0;
+    color: var(--thirdColor);
 }
-
 #Btn:hover{
-    background-color: #b1514c;
-    border-color: #b1514c;
+    background-color: rgb(5, 124, 5);
+    color: #ffffff;
     transition: .5s;
 }
-
 #AddToCart:hover{
-    background-color: #b65c57;
-    border-color: #b65c57;
+    background-color: rgb(5, 124, 5);
+    border-color: rgb(5, 124, 5);
     transition: .5s;
 }
 
-#women{
-    border-bottom: 2px solid black;
+#popular{
+    border-bottom: 2px solid white;
     padding: 15px;
+    color: #ffffff;
 }
 
 #brandName{
-    color: var(--thirdColor);
+    color: var(--firstColor);
+}
+
+.category{
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+}
+.category:hover{
+    color: rgb(17, 218, 17);
+    transition: .3s;
+}
+.category::after{
+    content: "";
+    background-color: var(--secondaryColor);
+    height: 3px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+.category:hover::after{
+    transition: .3s;
+    width: 100%;
 }
 
 #footer{
-    background-color: var(--mainColor);
+    background-color: rgb(5, 124, 5);
 }
 
 #footerText{
